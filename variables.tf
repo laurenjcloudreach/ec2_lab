@@ -21,13 +21,14 @@ variable "ec2_type" {
 }
 
 variable "public_subnet_name" {
-  type = string
+  type    = list(any) #string and no default
+  default = ["user1", "user2", "user3"]
 }
 
 variable "my_keypair" {
-  default = "aws_keypair"
+  default = "kp-cloudreach-lab-lj-2022"
 }
 
 variable "number_of_instances" {
-    description = "Amount of instances for my public subnet"
+  description = "Amount of instances for my public subnet"
 }
