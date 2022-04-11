@@ -18,6 +18,13 @@ data "aws_vpc" "main_vpc" {
 data "aws_subnet" "public" {
   filter {
     name   = "tag:Name"
-    values = var.public_subnet_name #removed brackets
+    values = [var.public_subnet_name]
+  }
+}
+
+data "aws_subnet" "private" {
+  filter {
+    name   = "tag:Name"
+    values = [var.private_subnet_name]
   }
 }

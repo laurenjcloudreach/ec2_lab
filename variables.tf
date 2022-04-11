@@ -21,14 +21,17 @@ variable "ec2_type" {
 }
 
 variable "public_subnet_name" {
-  type    = list(any) #string and no default
-  default = ["user1", "user2", "user3"]
+  type = string
+}
+
+variable "private_subnet_name" {
+  type = string
 }
 
 variable "my_keypair" {
   default = "kp-cloudreach-lab-lj-2022"
 }
 
-variable "number_of_instances" {
-  description = "Amount of instances for my public subnet"
+variable "number_of_private_instances" {
+  description = "Amount of instances for my private subnet"
 }
